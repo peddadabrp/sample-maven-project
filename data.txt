@@ -1,0 +1,13 @@
+{
+    "fields": {
+       "project":
+       {
+          "key": "SAM"
+       },
+       "summary": "Jenkinks Job failed.",
+       "description": "Jenkins job failed ",
+       "issuetype": {
+          "name": "Bug"
+       }
+   }
+}
