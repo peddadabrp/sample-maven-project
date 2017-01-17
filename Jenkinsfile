@@ -25,7 +25,7 @@ node ('linux'){
     }
     stage('Upload to Nexus') {
        
-       nexusArtifactUploader artifactId: '${JOB_NAME}', classifier: 'debug', credentialsId: '', file: '/var/lib/jenkins/workspace/new-job/multi-module/webapp/target/webapp.war', groupId: 'multi-module-parent', nexusPassword: 'admin123', nexusUrl: '192.168.59.103:8082/nexus', nexusUser: 'admin', nexusVersion: 'nexus2', protocol: 'http', repository: 'snapshots', type: 'war', version: '1.0.${BUILD_NUMBER}-SNAPSHOT'
+       //nexusArtifactUploader artifactId: '${JOB_NAME}', classifier: 'debug', credentialsId: '', file: '/var/lib/jenkins/workspace/new-job/multi-module/webapp/target/webapp.war', groupId: 'multi-module-parent', nexusPassword: 'admin123', nexusUrl: '192.168.59.103:8082/nexus', nexusUser: 'admin', nexusVersion: 'nexus2', protocol: 'http', repository: 'snapshots', type: 'war', version: '1.0.${BUILD_NUMBER}-SNAPSHOT'
     }
   }
 }
