@@ -7,7 +7,7 @@ node ('linux'){
     stage('Preparation') { // for display purposes
       // Get some code from a GitHub repository
       checkout scm
-      mvnHome = tool 'M3'
+      mvnHome = tool 'M2'
     }
     stage('Build') {
       // Run the maven build
