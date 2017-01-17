@@ -9,6 +9,10 @@ node ('linux'){
       checkout scm
       mvnHome = tool 'M2'
     }
+    stage ('Static Code Analysis') {
+     // SonarQube Analysia 
+       sh "'${mvnHome}/bin/mvn' org.sonarsource.scanner.maven:sonar-maven-plugin:3.2:sonar"
+    }   
     stage('Build') {
       // Run the maven build
       if (isUnix()) {
