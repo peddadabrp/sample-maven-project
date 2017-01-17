@@ -20,7 +20,7 @@ node ('linux'){
     }
     stage('Unit Results') {
       junit allowEmptyResults: true, keepLongStdio: true, testResults: '**/target/surefire-reports/TEST-*.xml'
-      //junit '**/target/surefire-reports/TEST-*.xml'
+      junit '**/target/surefire-reports/TEST-*.xml'
       archive 'target/*.jar'
     }
     stage('Upload to Nexus') {
