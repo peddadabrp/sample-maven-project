@@ -230,6 +230,7 @@ def MsBuild() {
 def Mavenbuild() {
 
     try {
+        mvnHome = tool 'M2'
         if (isUnix()) {
             sh "'${mvnHome}/bin/mvn' clean package"
         } else {
