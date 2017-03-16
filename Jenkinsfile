@@ -17,7 +17,7 @@ node {
         Msbuild()
     } else if (fileExists("${WORKSPACE}/pom.xml")) {
         sh "echo ###-------Maven Build------###"
-        Mavenbuild()
+        Maven()
         
     } else if (fileExists("${WORKSPACE}/test.txt")) {
         sh "cat $WORKSPACE/test.txt"
