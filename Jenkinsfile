@@ -231,7 +231,7 @@ def MsBuild() {
 def Mavenbuild() {
 
     try {
-        mvnHome = tool 'M2'
+           mvnHome = tool 'M2'
            if (isUnix()) {
             sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
             } else {
