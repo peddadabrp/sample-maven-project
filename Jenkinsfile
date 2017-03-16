@@ -227,7 +227,7 @@ def MsBuild() {
         sh "echo Ant Build Failed"
     }
 }
-def Mavenbuild1() {
+def Mavenbuild() {
 
     try {
         if (isUnix()) {
