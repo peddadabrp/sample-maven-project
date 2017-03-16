@@ -65,7 +65,7 @@ def Msbuild() {
 def Maven() {
     stage ('Preparation') {PreparationMavenEnv() }
     stage ('Checkout') {Checkout() }
-    stage ('Maven build') {Mavenbuild() }
+    stage ('Maven Build') {Mavenbuild() }
     stage ('Unit Test') {Sleeping() }
     stage ('Static Code Analysis') {CodeTest() }
     stage ('Publish to Artifactory') {UploadArtifact() }
@@ -231,7 +231,7 @@ def MsBuild() {
 def Mavenbuild() {
     try {
         mvnHome = tool 'M2'
-        sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
+        sh "'${mvnHome}/bin/mvn' clean package"
     } catch (Exception e) {
         sh "echo Maven Build Failed"
     }
