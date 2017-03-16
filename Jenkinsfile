@@ -240,15 +240,6 @@ def Mavenbuild() {
         sh "echo Maven Build Failed"
     }
 }
-def Mavenbuild1() {
-    try {
-        mvnHome = tool 'M2'
-        sh "'${mvnHome}/bin/mvn' clean package"
-    } catch (Exception e) {
-        sh "echo Maven Build Failed"
-    }
-
-}
 
 def CreateArtifact() {
     try {
