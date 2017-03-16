@@ -16,8 +16,8 @@ node {
         sh "echo ###-------MSBUILD------###"
         Msbuild()
     } else if (fileExists("${WORKSPACE}/pom.xml")) {
-        sh "echo ###-------Maven------###"
-        Maven()
+        sh "echo ###-------Maven Build------###"
+        Mavenbuild()
         
     } else if (fileExists("${WORKSPACE}/test.txt")) {
         sh "cat $WORKSPACE/test.txt"
@@ -65,7 +65,7 @@ def Msbuild() {
 def Maven() {
     stage ('Preparation') {PreparationMavenEnv() }
     stage ('Checkout') {Checkout() }
-    stage ('MSbuild') {MsBuild() }
+    stage ('Maven build') {Mavenbuild() }
     stage ('Unit Test') {Sleeping() }
     stage ('Static Code Analysis') {CodeTest() }
     stage ('Publish to Artifactory') {UploadArtifact() }
@@ -228,7 +228,7 @@ def MsBuild() {
     }
 }
 
-def Maven() {
+def Mavenbuild() {
 
     try {
         mvnHome = tool 'M2'
