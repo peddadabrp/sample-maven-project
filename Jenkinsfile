@@ -229,16 +229,11 @@ def MsBuild() {
 }
 
 def Mavenbuild() {
-
     try {
-           mvnHome = tool 'M2'
-           if (isUnix()) {
-            sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
-            } else {
-                bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean package/)
-            }
+        mvnHome = tool 'M2'
+        sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
     } catch (Exception e) {
-        sh "echo Ant Build Failed"
+        sh "echo Maven Build Failed"
     }
 
 }
