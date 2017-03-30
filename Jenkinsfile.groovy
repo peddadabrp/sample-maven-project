@@ -26,8 +26,8 @@ node {
 }
 
 def scmcheckout() {
-   checkout scm
-   //git 'https://github.com/peddadabrp/sample-maven-project.git'
+   //checkout scm
+   git 'https://github.com/peddadabrp/sample-maven-project.git'
    mvnHome = tool 'M2'
    
 }
